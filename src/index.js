@@ -11,7 +11,7 @@ app.get('/', (req,res) => {
 })
 
 app.use(bodyParser.json());
-app.use("/configurations/operationstrays", v1OperationsTraysRouter);
+app.use("/configurations/v1/operationstrays", v1OperationsTraysRouter);
 
 app.listen(PORT, () => {
   console.log(`API is listening on port ${PORT}`);
