@@ -23,13 +23,11 @@ const createNewOperationTray = (newOperationTray) => {
 }
 
 const updateOperationTray = (operationTrayId, changes) => {
-  console.log('bd operationTrayId', operationTrayId)
+  // console.log('bd operationTrayId', operationTrayId)
   const indexForUpdate = DB.operationstrays.findIndex(
     (operationTray) => operationTray.idOperationTry == operationTrayId
   );
-  if (indexForUpdate === -1) {
-    return;
-  }
+  if (indexForUpdate === -1) return;  
   const updatedOperationTray= {
     ...DB.operationstrays[indexForUpdate],
     ...changes,
@@ -39,6 +37,19 @@ const updateOperationTray = (operationTrayId, changes) => {
   saveToDatabase(DB);
   return updatedOperationTray;
 }
+
+const updateStatusOperationTry = ( operationTrayId, changes) => {
+  const indexForUpdate = DB.operationstrays.findIndex((operationTray) => operationTray.idOperationTry == operationTrayId)
+  if(indexForUpdate === -1) return
+  const updatedOperationTry = {
+    ...DB.operationstrays[indexForUpdate],
+    ...changes,
+    updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
+  }
+  DB.operationstrays[indexForUpdate] = updatedOperationTry;
+  saveToDatabase(DB);
+  return updatedOperationTry;
+} 
 
 const deleteOperationTray = (operationTrayId) => {
   const indexForDeletion = DB.operationstrays.findIndex(
@@ -57,5 +68,6 @@ module.exports = {
   getOneOperationTray,
   createNewOperationTray,
   updateOperationTray,
+  updateStatusOperationTry,
   deleteOperationTray
 }

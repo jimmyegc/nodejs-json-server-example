@@ -1,13 +1,14 @@
 {
   "operationstrays": [
     {
-      "idOperationTry": 1,
+      "idOperationTry": "1",
       "idCompany": 1,
       "nameOperationTry": "prueba #001 all in true",
       "active": true,
       "newRequests": true,
       "listingRequest": true,
-      "comments": "sin comentarios"
+      "comments": "activado de nuevo por operacion",
+      "updatedAt": "6/13/2024, 7:43:24 PM"
     }
   ],
   "historial-bandejas-operacion": [

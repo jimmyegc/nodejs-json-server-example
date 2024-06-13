@@ -27,6 +27,11 @@ const updateOperationTray = (operationTrayId, changes) => {
   return updatedOperationTray;
 };
 
+const updateStatusOperationTry = (operationTrayId, changes) => {
+  const updatedOperationTray = OperationsTrays.updateStatusOperationTry(operationTrayId, changes)
+  return updateOperationTray
+}
+
 const deleteOperationTray = (operationTrayId) => {
   OperationsTrays.deleteOperationTray(operationTrayId)
 };
@@ -36,5 +41,6 @@ module.exports = {
   getOneOperationTray,
   createNewOperationTray,
   updateOperationTray,
+  updateStatusOperationTry,
   deleteOperationTray,
 };
