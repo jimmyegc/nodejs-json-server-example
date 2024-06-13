@@ -6,8 +6,8 @@ const getAllOperationsTrays = () => {
   return allOperationsTrays;
 };
 
-const getOneOperationTray = (operationTrayId) => {
-  const operationTray = OperationsTrays.getOneOperationTray(operationTrayId);
+const getOneOperationTray = (id) => {  
+  const operationTray = OperationsTrays.getOneOperationTray(id);
   return operationTray; 
 };
 

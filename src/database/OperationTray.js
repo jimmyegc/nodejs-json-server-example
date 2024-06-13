@@ -6,8 +6,8 @@ const getAllOperationsTrays = () => {
   return DB.operationstrays
 }
 
-const getOneOperationTray = (operationTrayId) => {
-  const operationTray = DB.operationstrays.find((item) => item.idOperationTry === operationTrayId);
+const getOneOperationTray = (id) => {
+  const operationTray = DB.operationstrays.find((item) => item.idOperationTry == id);  
   if (!operationTray) {
     return;
   }
@@ -23,14 +23,15 @@ const createNewOperationTray = (newOperationTray) => {
 }
 
 const updateOperationTray = (operationTrayId, changes) => {
+  console.log('bd operationTrayId', operationTrayId)
   const indexForUpdate = DB.operationstrays.findIndex(
-    (operationTray) => operationTray.idBandejaOperacion === operationTrayId
+    (operationTray) => operationTray.idOperationTry == operationTrayId
   );
   if (indexForUpdate === -1) {
     return;
   }
   const updatedOperationTray= {
-    ...DB.bandejasoperacion[indexForUpdate],
+    ...DB.operationstrays[indexForUpdate],
     ...changes,
     updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
   };

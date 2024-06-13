@@ -6,8 +6,15 @@ const getAllOperationsTrays = (req, res) => {
 };
 
 const getOneOperationTray = (req, res) => {
-  const operationTray = operationsTraysService.getOneOperationTray()
-  res.send("Get an existing Operation");
+
+  const {
+    params: { id },
+  } = req;
+  if (!id) {
+    return;
+  }
+  const operationTray = operationsTraysService.getOneOperationTray(id)
+  res.send({ status: "OK", data: operationTray });    
 };
 
 const createNewOperationTray = (req, res) => {
@@ -16,7 +23,8 @@ const createNewOperationTray = (req, res) => {
     nameOperationTry: body.nameOperationTry,
     active: body.active,
     newRequests: body.newRequests,
-    listingRequest: body.listingRequest
+    listingRequest: body.listingRequest,
+    comments: body.comments
   }
   const createdOperationTray = operationsTraysService.createNewOperationTray(newOperationTray)
   res.status(201).send({ status: "OK", data: createdOperationTray });
@@ -24,13 +32,13 @@ const createNewOperationTray = (req, res) => {
 
 const updateOperationTray = (req, res) => {
   const {
-    body,
-    params: { id },
+    body    
   } = req;
-  if (!id) {
+  if (!body.idOperationTry) {
     return;
   }
-  const updatedOperationTray = operationsTraysService.updateOperationTray(id, body);
+  console.log(body.idOperationTry)
+  const updatedOperationTray = operationsTraysService.updateOperationTray(body.idOperationTry, body);
   res.send({ status: "OK", data: updatedOperationTray });
 };
 
