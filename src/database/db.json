@@ -11,33 +11,24 @@
       "updatedAt": "6/13/2024, 7:43:24 PM"
     }
   ],
-  "historial-bandejas-operacion": [
+  "historyoperationtrays": [
     {
-      "idBandejaOperacion": 1,
-      "idEventoHistorico": 1,
-      "idUsuario": 1,
-      "fechaEventoHistorico": "05/05/2024 10:00am",
-      "nombreEvento": "Bandeja Creada",
-      "nombreUsuario": "Eduardo García",
-      "Observaciones": ""
+      "idOperationTray": 1,
+      "idEventHistory": 1,
+      "idUser": 1,
+      "dateEvent": "05/05/2024 10:00am",
+      "nameEvent": "Bandeja Creada",
+      "nameUser": "Eduardo García",
+      "comments": "Inicio de Operaciones"
     },
     {
-      "idBandejaOperacion": 2,
-      "idEventoHistorico": 1,
-      "idUsuario": 1,
-      "fechaEventoHistorico": "07/05/2024 09:00am",
-      "nombreEvento": "Bandeja Creada",
-      "nombreUsuario": "Eduardo García",
-      "Observaciones": ""
-    },
-    {
-      "idBandejaOperacion": 1,
-      "idEventoHistorico": 2,
-      "idUsuario": 2,
-      "fechaEventoHistorico": "06/05/2024 10:00am",
-      "nombreEvento": "Bandeja Creada",
-      "nombreUsuario": "Jimmy García",
-      "Observaciones": "Solicitado por operaciones"
+      "idOperationTray": 1,
+      "idEventHistory": 2,
+      "idUser": 1,
+      "dateEvent": "07/05/2024 09:00am",
+      "nameEvent": "Bandeja Creada",
+      "nameUser": "Eduardo García",
+      "comments": "Solicitado por operaciones"
     }
   ]
 }
