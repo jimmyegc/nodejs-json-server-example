@@ -1,20 +1,12 @@
 {
-  "bandejasoperacion": [
+  "operationstrays": [
     {
-      "idBandejaOperacion": 1,
-      "idEmpresa": 1,
-      "nombreBandejaOperacion": "prueba #1",
-      "activo": true,
-      "solicitudesNuevas": true,
-      "solicitudListado": true
-    },
-    {
-      "idBandejaOperacion": 2,
-      "idEmpresa": 1,
-      "nombreBandejaOperacion": "prueba #2",
-      "activo": true,
-      "solicitudesNuevas": true,
-      "solicitudListado": true
+      "idOperationTry": 1,
+      "idCompany": 1,
+      "nameOperationTry": "prueba #001 all in true",
+      "active": true,
+      "newRequests": true,
+      "listingRequest": true
     }
   ],
   "historial-bandejas-operacion": [
