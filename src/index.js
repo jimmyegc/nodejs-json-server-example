@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 
 const v1OperationsTraysRouter = require("./v1/routes/operationsTrays");
@@ -10,6 +11,7 @@ app.get('/', (req,res) => {
   res.send({ message: 'Hello' })
 })
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/configurations/v1/operationstrays", v1OperationsTraysRouter);
 
