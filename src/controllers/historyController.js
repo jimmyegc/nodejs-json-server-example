@@ -12,7 +12,7 @@ const getOneHistory= (req, res) => {
   if (!id) {
     return;
   }
-  console.log(id)
+  // console.log(id)
   const historyItem = historyService.getOneHistory(id)
   res.send({ status: "OK", data: historyItem });    
 };

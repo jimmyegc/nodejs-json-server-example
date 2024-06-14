@@ -1,7 +1,7 @@
 {
   "operationstrays": [
     {
-      "idOperationTry": "1",
+      "idOperationTry": 1,
       "idCompany": 1,
       "nameOperationTry": "prueba #001 all in true",
       "active": true,
