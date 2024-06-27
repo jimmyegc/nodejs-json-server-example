@@ -61,6 +61,7 @@ app.get("/configurations/v1/webformstypes", async (req, res) => {
   const { data, error} = await supabase
     .from("dicWebFormsComponentesTipos")
     .select()
+    .order("id")
 
     console.log("data", data)
     console.log("error", error)
