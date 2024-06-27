@@ -5,7 +5,7 @@ const getAllHistories = () => {
 }
 
 const getOneHistory = (id) => {
-  const history = DB.historyoperationtrays.find((item) => item.idEventHistory == id);  
+  const history = DB.historyoperationtrays.find((item) => item.id == id);  
   if (!history) return;  
   return history;
 }

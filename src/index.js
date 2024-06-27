@@ -97,7 +97,7 @@ app.delete("/products/:id", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send({ message: "Hello :)" });
+  res.send({ message: "Hello" });
 });
 
 app.get("*", (req, res) => {

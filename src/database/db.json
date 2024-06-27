@@ -14,20 +14,18 @@
   "historyoperationtrays": [
     {
       "idOperationTray": 1,
-      "idEventHistory": 1,
-      "idUser": 1,
-      "dateEvent": "05/05/2024 10:00am",
-      "nameEvent": "Bandeja Creada",
-      "nameUser": "Eduardo García",
+      "id": 1,
+      "date": "05/05/2024 10:00am",
+      "event": "Bandeja Creada",
+      "user": "Eduardo García",
       "comments": "Inicio de Operaciones"
     },
     {
       "idOperationTray": 1,
-      "idEventHistory": 2,
-      "idUser": 1,
-      "dateEvent": "07/05/2024 09:00am",
-      "nameEvent": "Bandeja Creada",
-      "nameUser": "Eduardo García",
+      "id": 2,
+      "date": "07/05/2024 09:00am",
+      "event": "Bandeja Creada",
+      "user": "Eduardo García",
       "comments": "Solicitado por operaciones"
     }
   ]
