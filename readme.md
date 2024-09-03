@@ -11,3 +11,6 @@ https://www.youtube.com/watch?v=mAqYJF-yxO8
 # Part #2
 
 https://www.youtube.com/watch?v=VF3TI4Pj_kM
+
+# Supabase
+https://medium.com/@heshramsis/building-a-crud-app-with-supabase-and-express-a-step-by-step-guide-for-junior-developers-81456b850910

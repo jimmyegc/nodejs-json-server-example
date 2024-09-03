@@ -1,0 +1,27 @@
+### Hello World
+GET http://localhost:3000/
+
+### Get All
+GET http://localhost:3000/profiling
+
+### Get One
+GET http://localhost:3000/profiling/1
+
+### Create
+POST http://localhost:3000/profiling
+Content-Type: application/json
+
+{
+    "nombre": "Nuevo"
+}
+
+### Update
+PUT http://localhost:3000/profiling/1
+Content-Type: application/json
+
+{    
+    "nombre": "Nuevo updated"
+}
+
+### Delete
+DELETE http://localhost:3000/profiling/1
