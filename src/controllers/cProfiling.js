@@ -35,6 +35,9 @@ const cProfiling = {
             .from("profiling")
             .insert({
                 profiling: req.body.profiling,            
+                active: req.body.active,
+                companyId: req.body.companyId,
+                config: req.body.config
             });
             if (error) {
                 res.send(error);
@@ -53,6 +56,9 @@ const cProfiling = {
             .from('profiling')
             .update({
                 profiling: req.body.profiling,    
+                active: req.body.active,
+                companyId: req.body.companyId,
+                config: req.body.config
             })
             .eq('id', req.params.id)
     
