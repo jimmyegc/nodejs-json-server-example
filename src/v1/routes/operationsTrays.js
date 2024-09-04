@@ -11,3 +11,4 @@ router.patch("/", operationsTrays.updateStatusOperationTry)
 router.delete("/:id", operationsTrays.deleteOperationTray);
 
 module.exports = router;
+
