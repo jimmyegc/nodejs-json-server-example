@@ -2,56 +2,88 @@ import supabase from '../database/supabase.js'
 
 const cProfiling = {
     getAll: async (req, res) => {
-        const { data, error } = await supabase
-        .from("profiling")
-        .select()
-        
-        res.send({ status: "OK", data })                
-    },
-    getOne: async (req, res) => {
-        console.log(req.params.id)
+        try {
 
-        const {data, error} = await supabase
-        .from('profiling')
-        .select()
-        .eq('id', req.params.id)
-        
-        res.send({ status: "OK", data })
+            const { data, error } = await supabase
+            .from("profiling")
+            .select()
+            
+            res.send({ status: "OK", errorCode: "", errorMessage: "", data })                
+
+        } catch(error) {
+            res.send({ status: "ERROR", errorCode: 500, errorMessage: error.message, data: null })
+        }        
+    },
+    getOne: async (req, res) => {        
+        try {
+            
+            const {data, error} = await supabase
+            .from('profiling')
+            .select()
+            .eq('id', req.params.id)            
+
+            res.send({ status: "OK", errorCode: "", errorMessage: "", data })
+
+        } catch (error) {
+            res.send({ status: "ERROR", errorCode: 500, errorMessage: error.message, data: null })
+        }                        
     },
     create: async(req, res) => {
-        const { error } = await supabase
-        .from("profiling")
-        .insert({
-            nombre: req.body.nombre,            
-        });
-        if (error) {
-            res.send(error);
-        }
-        res.send("created!!");
+        try {
+
+            const { data, error } = await supabase
+            .from("profiling")
+            .insert({
+                profiling: req.body.profiling,            
+            });
+            if (error) {
+                res.send(error);
+            }
+
+            res.send({ status: "OK", errorCode: "", errorMessage: "", data })
+
+        } catch (error) {
+            res.send({ status: "ERROR", errorCode: 500, errorMessage: error.message, data: null })
+        }            
     },
     update: async(req, res) => {        
-        const { error } = await supabase
-        .from('profiling')
-        .update({
-            nombre: req.body.nombre,    
-        })
-        .eq('id', req.params.id)
+        try {
 
-        if (error) {
-            res.send(error);
+            const { data, error } = await supabase
+            .from('profiling')
+            .update({
+                profiling: req.body.profiling,    
+            })
+            .eq('id', req.params.id)
+    
+            if (error) {
+                res.send(error);
+            }
+
+            res.send({ status: "OK", errorCode: "", errorMessage: "", data })            
+
+        } catch (error) {
+            res.send({ status: "ERROR", errorCode: 500, errorMessage: error.message, data: null })
         }
-        res.send("updated!!");
-        },
+    },
     delete: async(req, res) => {     
-        const { error } = await supabase
-        .from('profiling')
-        .delete()
-        .eq('id', req.params.id)
-        
-        if (error) {
-            res.send(error);
+        try {
+            
+            const { error } = await supabase
+            .from('profiling')
+            .delete()
+            .eq('id', req.params.id)
+            
+            if (error) {
+                res.send(error);
+            }
+
+            res.send({ status: "OK", errorCode: "", errorMessage: "", data })      
+
+        } catch(error) {
+            res.send({ status: "ERROR", errorCode: 500, errorMessage: error.message, data: null })
         }
-        res.send("deleted!!")
+        
     }
 }
 

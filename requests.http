@@ -2,26 +2,26 @@
 GET http://localhost:3000/
 
 ### Get All
-GET http://localhost:3000/profiling
+GET http://localhost:3000/configurations/v1/profiling
 
 ### Get One
-GET http://localhost:3000/profiling/1
+GET http://localhost:3000/configurations/v1/profiling/7
 
 ### Create
-POST http://localhost:3000/profiling
+POST http://localhost:3000/configurations/v1/profiling
 Content-Type: application/json
 
 {
-    "nombre": "Nuevo"
+    "profiling": "Perfil de prueba"
 }
 
 ### Update
-PUT http://localhost:3000/profiling/1
+PUT http://localhost:3000/configurations/v1/profiling/7
 Content-Type: application/json
 
 {    
-    "nombre": "Nuevo updated"
+    "profiling": "Campaña de prueba"
 }
 
 ### Delete
-DELETE http://localhost:3000/profiling/1
+DELETE http://localhost:3000/configurations/v1/profiling/6

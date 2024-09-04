@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/profiling", v1Profiling);
+app.use("/configurations/v1/profiling", v1Profiling);
 app.use("/", v1DefaultRouter);
 
 app.listen(3000, () => {
