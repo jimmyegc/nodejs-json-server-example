@@ -1,4 +1,5 @@
 import supabase from '../database/supabase.js'
+import cHistorial from './cHistorial.js'
 
 const cProfiling = {
     getAll: async (req, res) => {
@@ -20,8 +21,8 @@ const cProfiling = {
             const {data, error} = await supabase
             .from('profiling')
             .select()
-            .eq('id', req.params.id)            
-
+            .eq('id', req.params.id)         
+            
             res.send({ status: "OK", errorCode: "", errorMessage: "", data })
 
         } catch (error) {
@@ -38,7 +39,16 @@ const cProfiling = {
                 active: req.body.active,
                 companyId: req.body.companyId,
                 config: req.body.config
-            });
+            }).select("id");
+            
+            cHistorial.create({
+                 idCatalog: data[0].id,
+                 date: new Date(),
+                 user: "Jimmy García",
+                 event: "Created",
+                 comments: ""
+             })
+ 
             if (error) {
                 res.send(error);
             }

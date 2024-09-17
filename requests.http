@@ -8,8 +8,8 @@ GET http://localhost:3000/configurations/v1/profiling
 GET http://localhost:3000/configurations/v1/profiling/7
 
 ### Create
-//POST http://localhost:3000/configurations/v1/profiling
-POST https://json-server-example-d3tb.onrender.com/configurations/v1/profiling
+POST http://localhost:3000/configurations/v1/profiling
+//POST https://json-server-example-d3tb.onrender.com/configurations/v1/profiling
 Content-Type: application/json
 
 {
